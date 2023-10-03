@@ -1,0 +1,2396 @@
+# Logic rules (category automation) Akeneo YAML:
+# Starting from the final categories (e.g., 1_sfam_adapter), we define division, subdivision, and family.
+
+# It does not include subfamilies (except for services > coatings > services > service), which should be assigned in another YAML for better organization.
+
+rules:
+############# Productos de agua ##################
+# Productos agua > cocina > complementos de cocina
+  categorizacion_complementos_de_cocina:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_adaptador
+          - 1_sfam_boton
+          - 1_sfam_llave
+          - 1_sfam_suavizador
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_cocina
+      - 
+        type: set
+        field: atr_familia
+        value: fam_complementos_cocina
+        locale: es_MX
+    labels: {}
+# Productos agua > cocina > repuestos de cocina
+  categorizacion_respuestos_cocina:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cartucho
+          - 1_sfam_contra_canasta
+          - 1_sfam_filtro
+          - 1_sfam_manguera
+          - 1_sfam_membrana
+          - 1_sfam_porta_filtro
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_cocina
+      - 
+        type: set
+        field: atr_familia
+        value: fam_repuestos_cocina
+        locale: es_MX
+    labels: {}
+# Productos agua > cocina > purificacion
+  categorizacion_purificacion:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_purificadores
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_cocina
+      - 
+        type: set
+        field: atr_familia
+        value: fam_purificacion
+        locale: es_MX
+    labels: {}
+# Productos agua > cocina > tarja
+  categorizacion_tarja:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_tarja_bajo_cubierta
+          - 1_sfam_tarja_faldon
+          - 1_sfam_tarja_sobre_poner
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_cocina
+      - 
+        type: set
+        field: atr_familia
+        value: fam_tarja
+        locale: es_MX
+    labels: {}
+# Productos agua > cocina > trituradores
+  categorizacion_trituradores:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_triturador
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_cocina
+      - 
+        type: set
+        field: atr_familia
+        value: fam_trituradores
+        locale: es_MX
+    labels: {}
+
+# Productos agua > griferia > refacciones
+  categorizacion_refacciones:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_palanca_y_boton
+          - 1_sfam_refacciones
+          - 1_sfam_tapas
+          - 1_sfam_valvulas
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_griferia
+      - 
+        type: set
+        field: atr_familia
+        value: fam_refacciones
+        locale: es_MX
+    labels: {}
+# Productos agua > griferia > complementos
+  categorizacion_complementos:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_adaptadores_y_complementos
+          - 1_sfam_brazos
+          - 1_sfam_cespol
+          - 1_sfam_chapeton
+          - 1_sfam_coladeras
+          - 1_sfam_contras
+          - 1_sfam_dispensador_de_jabon
+          - 1_sfam_ensambles
+          - 1_sfam_flexo
+          - 1_sfam_llaves_de_paso
+          - 1_sfam_manerales
+          - 1_sfam_soporte
+          - 1_sfam_toma_de_agua
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_griferia
+      - 
+        type: set
+        field: atr_familia
+        value: fam_complementos
+        locale: es_MX
+    labels: {}
+# Productos agua > griferia > regadera
+  categorizacion_regadera:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cebolleta
+          - 1_sfam_columna
+          - 1_sfam_jets
+          - 1_sfam_mezcladora_regadera
+          - 1_sfam_monomando_regadera
+          - 1_sfam_regadera_fija
+          - 1_sfam_regadera_manual
+          - 1_sfam_rociadores
+          - 1_sfam_termostatos
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_griferia
+      - 
+        type: set
+        field: atr_familia
+        value: fam_regadera
+        locale: es_MX
+    labels: {}
+# Productos agua > griferia > lavabo
+  categorizacion_lavabo1:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_llave2
+          - 1_sfam_mezcladora_lavabo
+          - 1_sfam_monomando_lavabo
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_griferia
+      - 
+        type: set
+        field: atr_familia
+        value: fam_lavabo
+        locale: es_MX
+    labels: {}
+# Productos agua > griferia > cocina
+  categorizacion_cocina:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_llave_dispensadora
+          - 1_sfam_llenador_de_ollas
+          - 1_sfam_mezcladora_cocina
+          - 1_sfam_monomando_cocina
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_griferia
+      - 
+        type: set
+        field: atr_familia
+        value: fam_cocina
+        locale: es_MX
+    labels: {}
+# Productos agua > griferia > bidet
+  categorizacion_bidet:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_monomando_bidet
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_griferia
+      - 
+        type: set
+        field: atr_familia
+        value: fam_bidet
+        locale: es_MX
+    labels: {}
+# Productos agua > griferia > tina
+  categorizacion_tina:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_salida_de_tina_cubierta
+          - 1_sfam_salida_de_tina_muro
+          - 1_sfam_salida_de_tina_piso
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_griferia
+      - 
+        type: set
+        field: atr_familia
+        value: fam_tina
+        locale: es_MX
+    labels: {}
+
+# Productos agua > sanitarios > asientos
+  categorizacion_asientos:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_alargado
+          - 1_sfam_infantil
+          - 1_sfam_institucional
+          - 1_sfam_inteligente
+          - 1_sfam_redondo
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_sanitarios
+      - 
+        type: set
+        field: atr_familia
+        value: fam_asientos
+        locale: es_MX
+    labels: {}
+# Productos agua > sanitarios > sanitarios_complementos
+  categorizacion_sanitarios_complementos:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_bastidor
+          - 1_sfam_pulsadores
+          - 1_sfam_tanque_oculto
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_sanitarios
+      - 
+        type: set
+        field: atr_familia
+        value: fam_sanitarios_complementos
+        locale: es_MX
+    labels: {}
+# Productos agua > sanitarios > sanitarios2
+  categorizacion_sanitarios:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_combo3
+          - 1_sfam_dos_piezas
+          - 1_sfam_individual
+          - 1_sfam_infantil2
+          - 1_sfam_inteligente2
+          - 1_sfam_suspendidos
+          - 1_sfam_una_pieza
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_sanitarios
+      - 
+        type: set
+        field: atr_familia
+        value: fam_sanitarios
+        locale: es_MX
+    labels: {}
+
+# Productos agua > lavabos > lavabo
+  categorizacion_lavabo2:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_bajo_cubierta
+          - 1_sfam_combo2
+          - 1_sfam_lavabo_a_muro
+          - 1_sfam_lavabo_a_piso
+          - 1_sfam_pedestal
+          - 1_sfam_sobre_cubierta
+          - 1_sfam_sobre_poner
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_lavabos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_lavabo
+        locale: es_MX
+    labels: {}
+
+# Productos agua > accesorios > accesorios
+  categorizacion_accesorios:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_barra
+          - 1_sfam_escobilleros
+          - 1_sfam_extractores
+          - 1_sfam_gancho
+          - 1_sfam_jabonera
+          - 1_sfam_juego_de_accesorios
+          - 1_sfam_organizadores
+          - 1_sfam_porta_cepillos
+          - 1_sfam_porta_papel
+          - 1_sfam_repisas
+          - 1_sfam_toallero
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_accesorios
+      - 
+        type: set
+        field: atr_familia
+        value: fam_accesorios
+        locale: es_MX
+    labels: {}
+# Productos agua > accesorios > espejo
+  categorizacion_espejo:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_espejo
+          - 1_sfam_espejo_inteligente
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_accesorios
+      - 
+        type: set
+        field: atr_familia
+        value: fam_espejo
+        locale: es_MX
+    labels: {}
+
+# Productos agua > institucionales > accesorios
+  categorizacion_accesorios:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_barra_de_seguridad
+          - 1_sfam_basurero
+          - 1_sfam_cambiador
+          - 1_sfam_dosificador
+          - 1_sfam_porta_papel2
+          - 1_sfam_secador
+          - 1_sfam_silla_de_seguridad
+          - 1_sfam_toallero2
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_institucionales
+      - 
+        type: set
+        field: atr_familia
+        value: fam_accesorios
+        locale: es_MX
+    labels: {}
+# Productos agua > institucionales > institucional
+  categorizacion_institucional:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_combo
+          - 1_sfam_fluxometro
+          - 1_sfam_interceptor_de_grasa
+          - 1_sfam_mingitorio
+          - 1_sfam_taza
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_institucionales
+      - 
+        type: set
+        field: atr_familia
+        value: fam_institucional
+        locale: es_MX
+    labels: {}
+
+# Productos agua > muebles para baños > botiquines
+  categorizacion_botiquines:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_botiquin
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muebles_para_banio
+      - 
+        type: set
+        field: atr_familia
+        value: fam_botiquines
+        locale: es_MX
+    labels: {}
+# Productos agua > muebles para baños > mueble
+  categorizacion_mueble:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_combo_a_muro
+          - 1_sfam_combo_a_piso_
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muebles_para_banio
+      - 
+        type: set
+        field: atr_familia
+        value: fam_mueble
+        locale: es_MX
+    labels: {}
+# Productos agua > muebles para baños > encimeras
+  categorizacion_encimeras:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_encimera
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muebles_para_banio
+      - 
+        type: set
+        field: atr_familia
+        value: fam_encimeras
+        locale: es_MX
+    labels: {}
+# Productos agua > muebles para baños > gabinetes
+  categorizacion_gabinetes:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_gabinete
+          - 1_sfam_gabinete_grande
+          - 1_sfam_gabinete_mediano
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muebles_para_banio
+      - 
+        type: set
+        field: atr_familia
+        value: fam_gabinetes
+        locale: es_MX
+    labels: {}
+# Productos agua > muebles para baños > gabinetes
+  categorizacion_gabinetes:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_gabinete
+          - 1_sfam_gabinete_grande
+          - 1_sfam_gabinete_mediano
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muebles_para_banio
+      - 
+        type: set
+        field: atr_familia
+        value: fam_gabinetes
+        locale: es_MX
+    labels: {}
+
+# Productos agua > canceleria > canceles
+  categorizacion_canceles:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_canceles
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_canceleria
+      - 
+        type: set
+        field: atr_familia
+        value: fam_canceles
+        locale: es_MX
+    labels: {}
+# Productos agua > canceleria > platos de ducha
+  categorizacion_platos_ducha:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_platos_de_ducha
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_canceleria
+      - 
+        type: set
+        field: atr_familia
+        value: fam_platos_ducha
+        locale: es_MX
+    labels: {}
+
+# Productos agua > spa > spa
+  categorizacion_spa:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_complementos_spa
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_spa
+      - 
+        type: set
+        field: atr_familia
+        value: fam_spa
+        locale: es_MX
+    labels: {}
+# Productos agua > spa > tina
+  categorizacion_tina:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_hidromasaje
+          - 1_sfam_remojo
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_spa
+      - 
+        type: set
+        field: atr_familia
+        value: fam_tinas
+        locale: es_MX
+    labels: {}
+# Productos agua > spa > jacuzzi
+  categorizacion_jacuzzi:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_jacuzzi
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_spa
+      - 
+        type: set
+        field: atr_familia
+        value: fam_jacuzzi
+        locale: es_MX
+    labels: {}
+# Productos agua > spa > sauna
+  categorizacion_sauna:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_sistema_de_sauna
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_spa
+      - 
+        type: set
+        field: atr_familia
+        value: fam_sauna
+        locale: es_MX
+    labels: {}
+# Productos agua > spa > vapor
+  categorizacion_vapor:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_sistema_de_vapor
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_spa
+      - 
+        type: set
+        field: atr_familia
+        value: fam_vapor
+        locale: es_MX
+    labels: {}
+
+# Productos agua > calentadores > calentadores
+  categorizacion_calentadores:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_estacionario
+          - 1_sfam_instantaneo
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_productos_agua
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_calentadores
+      - 
+        type: set
+        field: atr_familia
+        value: fam_calentadores
+        locale: es_MX
+    labels: {}
+
+############# Material de instalacion ##################
+# Materiales de instalacion > recubrimientos > adhesivos
+  categorizacion_adhesivos:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_adhesivo_ceramico
+          - 1_sfam_adhesivo_epoxico
+          - 1_sfam_adhesivo_flexible
+          - 1_sfam_adhesivo_porcelanico
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_adhesivos
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > aditivos
+  categorizacion_aditivos:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_aditivos_para_boquilla
+          - 1_sfam_aditivos_para_cemento
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_aditivos
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > perfiles
+  categorizacion_perfiles:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_aluminio
+          - 1_sfam_madera2
+          - 1_sfam_plastico
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_perfiles
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > mantenimiento
+  categorizacion_mantenimiento:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_antiderrapante
+          - 1_sfam_impermeabilizante
+          - 1_sfam_impregnadores
+          - 1_sfam_limpiadores
+          - 1_sfam_selladores
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_mantenimiento
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > autonivelante
+  categorizacion_autonivelante:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cementicio
+          - 1_sfam_liquido
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_autonivelante
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > niveladores
+  categorizacion_niveladores:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_crucetas
+          - 1_sfam_kit_niveladores
+          - 1_sfam_niveladores
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_niveladores
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > herramientas
+  categorizacion_herramientas:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_discos_de_corte
+          - 1_sfam_herramienta
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_herramientas
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > estuco
+  categorizacion_estuco:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_estuco
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_estuco
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > membranas
+  categorizacion_membranas:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_membrana_cementicia
+          - 1_sfam_membrana_latex
+          - 1_sfam_tela_de_refuerzo
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_membranas
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > mortero
+  categorizacion_mortero:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_mortero
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_morteros
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > recubrimientos > piso_radiante
+  categorizacion_piso_radiante:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_piso_radiante
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_piso_radiante
+        locale: es_MX
+    labels: {}
+
+# Materiales de instalacion > sinteticos > pegamento
+  categorizacion_pegamento:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_pegamento
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_sinteticos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_adhesivos
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > sinteticos > perfiles
+  categorizacion_perfiles2:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_perfiles_plastico
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_sinteticos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_perfiles
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > sinteticos > cunias
+  categorizacion_cunias:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cunias
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_sinteticos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_cunias
+        locale: es_MX
+    labels: {}
+
+# Materiales de instalacion > productos de agua > lavabo
+  categorizacion_lavabo3:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_kit_de_instal
+          - 1_sfam_otros
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_productos_agua
+      - 
+        type: set
+        field: atr_familia
+        value: fam_lavabo
+        locale: es_MX
+    labels: {}
+# Materiales de instalacion > productos de agua > sanitarios
+  categorizacion_sanitarios2:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_kit_de_instal2
+          - 1_sfam_otros2
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_material_instal
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_productos_agua
+      - 
+        type: set
+        field: atr_familia
+        value: fam_sanitarios
+        locale: es_MX
+    labels: {}
+
+####################### ARTYTEK ############################
+# Artytek > alfombras > alfombra
+  categorizacion_alfombra:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_alfombra
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_alfombras
+      - 
+        type: set
+        field: atr_familia
+        value: fam_alfombra
+        locale: es_MX
+    labels: {}
+# Artytek > vinilicos > complementos2
+  categorizacion_complementos2:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_bajo_piso
+          - 1_sfam_bastidores
+          - 1_sfam_molduras
+          - 1_sfam_tornilleria
+          - 1_sfam_zoclos
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_vinilicos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_complementos
+        locale: es_MX
+    labels: {}
+# Artytek > vinilicos > deck
+  categorizacion_deck:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_deck
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_vinilicos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_deck
+        locale: es_MX
+    labels: {}
+# Artytek > vinilicos > lvt
+  categorizacion_lvt:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_lvt
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_vinilicos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_lvt
+        locale: es_MX
+    labels: {}
+# Artytek > vinilicos > pvc
+  categorizacion_pvc:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_pvc
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_vinilicos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_pvc
+        locale: es_MX
+    labels: {}
+# Artytek > vinilicos > spc
+  categorizacion_spc:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_spc_muro
+          - 1_sfam_spc_piso
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_vinilicos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_spc
+        locale: es_MX
+    labels: {}
+# Artytek > vinilicos > wpc
+  categorizacion_wpc:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_wpc
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_vinilicos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_wpc
+        locale: es_MX
+    labels: {}
+
+# Artytek > follasjes sinteticos > follaje sintetico
+  categorizacion_follate_sintetico:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_decoracion
+          - 1_sfam_follaje
+          - 1_sfam_planta
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_follajes_sinteticos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_follaje_sintetico
+        locale: es_MX
+    labels: {}
+
+# Artytek > piedras > piedra cultivada
+  categorizacion_piedra_cultivada:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_fachaletas
+          - 1_sfam_piedras
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_piedras
+      - 
+        type: set
+        field: atr_familia
+        value: fam_piedra_cultivada
+        locale: es_MX
+    labels: {}
+
+# Artytek > madera > laminados
+  categorizacion_laminados:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_laminados
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_madera
+      - 
+        type: set
+        field: atr_familia
+        value: fam_laminados
+        locale: es_MX
+    labels: {}
+# Artytek > madera > madera ingenieria
+  categorizacion_madera_ingenieria:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_madera_ingenieria
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_madera
+      - 
+        type: set
+        field: atr_familia
+        value: fam_madera_ingenieria
+        locale: es_MX
+    labels: {}
+
+# Artytek > paneles acusticos > paneles acusticos
+  categorizacion_paneles_acusticos:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_panel_acustico
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_paneles_acusticos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_panel_acustico
+        locale: es_MX
+    labels: {}
+
+# Artytek > pastos sinteticos > pasto sintetico
+  categorizacion_pastos_sinteticos:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_pasto_sintetico
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_artytek
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_pastos_sinteticos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_pasto_sintetico
+        locale: es_MX
+    labels: {}
+
+####################### RECUBRIMIENTOS ############################
+# Recubrimientos > muro > azulejo
+  categorizacion_azulejo:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_azulejo
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muro
+      - 
+        type: set
+        field: atr_familia
+        value: fam_azulejo
+        locale: es_MX
+    labels: {}
+# Recubrimientos > muro > ceramico
+  categorizacion_ceramico:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_ceramico2
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muro
+      - 
+        type: set
+        field: atr_familia
+        value: fam_ceramico
+        locale: es_MX
+    labels: {}
+# Recubrimientos > muro > porcelanico
+  categorizacion_porcelanico:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cuerpo_coloreado
+          - 1_sfam_doble_carga
+          - 1_sfam_porcelanico4
+          - 1_sfam_sal_soluble
+          - 1_sfam_todo_masa
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muro
+      - 
+        type: set
+        field: atr_familia
+        value: fam_porcelanico
+        locale: es_MX
+    labels: {}
+# Recubrimientos > muro > gres
+  categorizacion_gres:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_gres2
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_muro
+      - 
+        type: set
+        field: atr_familia
+        value: fam_gres
+        locale: es_MX
+    labels: {}
+
+# Recubrimientos > decorado > brick
+  categorizacion_brick:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_ceramico
+          - 1_sfam_gres
+          - 1_sfam_porcelanico
+          - 1_sfam_vidrio
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_decorado
+      - 
+        type: set
+        field: atr_familia
+        value: fam_brick
+        locale: es_MX
+    labels: {}
+# Recubrimientos > decorado > malla
+  categorizacion_malla:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_ceramic4
+          - 1_sfam_madera
+          - 1_sfam_metal
+          - 1_sfam_mix
+          - 1_sfam_piedra_natural
+          - 1_sfam_porcelanico2
+          - 1_sfam_vidrio2
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_decorado
+      - 
+        type: set
+        field: atr_familia
+        value: fam_malla
+        locale: es_MX
+    labels: {}
+# Recubrimientos > decorado > piedra_natural
+  categorizacion_piedra_natural:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_fachaleta
+          - 1_sfam_slim_xl
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_decorado
+      - 
+        type: set
+        field: atr_familia
+        value: fam_piedra_natural
+        locale: es_MX
+    labels: {}
+
+# Recubrimientos > piso > ceramico
+  categorizacion_ceramico2:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_fachaleta
+          - 1_sfam_slim_xl
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_piso
+      - 
+        type: set
+        field: atr_familia
+        value: fam_ceramico
+        locale: es_MX
+    labels: {}
+# Recubrimientos > piso > porcelanico
+  categorizacion_porcelanico2:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cuerpo_coloreado2
+          - 1_sfam_doble_carga2
+          - 1_sfam_porcelanico5
+          - 1_sfam_sal_soluble2
+          - 1_sfam_todo_masa2
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_piso
+      - 
+        type: set
+        field: atr_familia
+        value: fam_porcelanico
+        locale: es_MX
+    labels: {}
+# Recubrimientos > piso > gres
+  categorizacion_gres2:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cuerpo_coloreado2
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_piso
+      - 
+        type: set
+        field: atr_familia
+        value: fam_gres
+        locale: es_MX
+    labels: {}
+# Recubrimientos > piso > pavers
+  categorizacion_pavers:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_natural
+          - 1_sfam_porcelanico3
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_recubrimientos
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_piso
+      - 
+        type: set
+        field: atr_familia
+        value: fam_pavers
+        locale: es_MX
+    labels: {}
+
+####################### Piedras naturales ############################
+# Piedras naturales > natural > cuarzita
+  categorizacion_cuarzita:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cuarzita_importada
+          - 1_sfam_cuarzita_nacional
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_piedras_naturales
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_natural
+      - 
+        type: set
+        field: atr_familia
+        value: fam_cuarzita
+        locale: es_MX
+    labels: {}
+# Piedras naturales > natural > granito
+  categorizacion_granito:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_granito_importado
+          - 1_sfam_granito_nacional
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_piedras_naturales
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_natural
+      - 
+        type: set
+        field: atr_familia
+        value: fam_granito
+        locale: es_MX
+    labels: {}
+# Piedras naturales > natural > marmol
+  categorizacion_marmol:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_marmol_importado
+          - 1_sfam_marmol_nacional
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_piedras_naturales
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_natural
+      - 
+        type: set
+        field: atr_familia
+        value: fam_marmol
+        locale: es_MX
+    labels: {}
+
+# Piedras naturales > artificial > cuarzo
+  categorizacion_cuarzo:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_cuarzo_importado
+          - 1_sfam_cuarzo_nacional
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_piedras_naturales
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_artificial
+      - 
+        type: set
+        field: atr_familia
+        value: fam_cuarzo
+        locale: es_MX
+    labels: {}
+# Piedras naturales > artificial > pierda_tecnologica
+  categorizacion_pierda_tecnologica:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_piedra_tecno_importada
+          - 1_sfam_piedra_tecno_nacional
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_piedras_naturales
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_artificial
+      - 
+        type: set
+        field: atr_familia
+        value: fam_piedra_tecnologica
+        locale: es_MX
+    labels: {}
+
+#######################  SERVICIOS ############################
+# Servicios > artytek > servicios
+  categorizacion_:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_fam_servicios
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_servicios
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_artytek
+      - 
+        type: set
+        field: atr_familia
+        value: fam_servicios
+        locale: es_MX
+    labels: {}
+
+# Servicios > piedras naturales > servicios
+  categorizacion_servicios2:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_fam_servicios2
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_servicios
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_piedras_naturales
+      - 
+        type: set
+        field: atr_familia
+        value: fam_servicios
+        locale: es_MX
+    labels: {}
+
+# Servicios > productos de agua > servicios
+  categorizacion_servicios3:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_fam_servicios3
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_servicios
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_productos_agua
+      - 
+        type: set
+        field: atr_familia
+        value: fam_servicios
+        locale: es_MX
+    labels: {}
+
+# Servicios > recubrimientos > servicios > servicio
+  categorizacion_servicios4:
+    priority: 60
+    enabled: true
+    conditions:
+      - 
+        field: categories 
+        operator: IN
+        value:
+          - 1_sfam_servicio
+    actions:
+      - 
+        type: set
+        field: atr_division
+        value: div_servicios
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sdivision
+        locale: es_MX
+        value: sdiv_recubrimientos
+      - 
+        type: set
+        field: atr_familia
+        value: fam_servicios
+        locale: es_MX
+      - 
+        type: set
+        field: atr_sfamilia
+        value: sfam_servicio
+        locale: es_MX
+    labels: {}
