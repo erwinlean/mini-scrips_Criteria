@@ -1,0 +1,81 @@
+rules:
+    forma_tablon:
+        priority: 50
+        enabled: true
+        conditions:
+            -
+                field: atr_formato
+                locale: es_MX
+                operator: IN
+                value:
+                  - 20x120
+                  - 20x150
+                  - 20x60
+                  - 20x90
+        actions:
+            -
+                field: atr_forma
+                locale: es_MX
+                type: set
+                value: tablon
+        labels:
+            es_MX: 'Forma tablón'
+            en_US: 'Plank shape'
+    forma_rectangular:
+        priority: 50
+        enabled: true
+        conditions:
+            -
+                field: atr_formato
+                locale: es_MX
+                operator: IN
+                value:
+                    - 60x90
+                    - 60x120
+                    - 30x45
+                    - 80x160
+                    - 30x90
+                    - 30x60
+                    - 45x90
+                    - 20x30
+                    - 90x180
+                    - 10x20
+                    - 10x30
+        actions:
+            -
+                field: atr_forma
+                locale: es_MX
+                type: set
+                value: rectangular
+        labels:
+            es_MX: 'Forma rectangular'
+            en_US: ' Rectangular shape'
+    forma_cuadrado:
+        priority: 50
+        enabled: true
+        conditions:
+            -
+                field: atr_formato
+                locale: es_MX
+                operator: IN
+                value:
+                    - 90x90
+                    - 80x80
+                    - 120x120
+                    - 15x15
+                    - 60x60
+                    - 20x20
+                    - 45x45
+                    - 25x25
+                    - 30x30
+                    - 55x55
+                    - 40x40
+        actions:
+            -
+                field: atr_forma
+                locale: es_MX
+                type: set
+                value: cuadrado
+        labels:
+            es_MX: 'Forma Cuadrado'
+            en_US: 'Square shape'
