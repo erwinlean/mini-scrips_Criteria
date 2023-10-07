@@ -1,0 +1,9 @@
+{
+    "source": {
+      "property": "media",
+      "channel": null,
+      "locale": null
+    },
+    "pattern": "/(?<product_ref>.*?)(?:_(\\d+))?\\.(png|jpg|jpeg|webp)/",
+    "abort_asset_creation_on_error": true
+}

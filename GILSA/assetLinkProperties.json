@@ -1,0 +1,21 @@
+[
+  {
+    "product_selections": [
+      {
+        "field": "sku",
+        "value": "{{product_ref}}",
+        "locale": null,
+        "channel": null,
+        "operator": "="
+      }
+    ],
+    "assign_assets_to": [
+      {
+        "attribute": "atr_img",
+        "locale": null,
+        "channel": null,
+        "mode": "add"
+      }
+    ]
+  }
+]
