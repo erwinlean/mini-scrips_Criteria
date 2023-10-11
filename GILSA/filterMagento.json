@@ -1,0 +1,14 @@
+{
+    "search": {
+        "enabled": [{
+            "operator": "=",
+            "value": true
+        }],
+        "atr_sap_status": [{
+            "operator": "=",
+            "value": "sap_status_1"
+        }]
+    },
+    "scope": null,
+    "locales": "es_MX"
+}
