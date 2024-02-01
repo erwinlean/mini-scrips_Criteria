@@ -4,11 +4,16 @@
             "operator": "=",
             "value": true
         }],
-        "atr_sap_status": [{
+        "atr_sap": [{
             "operator": "=",
-            "value": "sap_status_1"
+            "value": true
+        }],
+        "completeness": [{
+            "operator":"<=",
+            "value":85,
+            "scope": "ch_gilsa"
         }]
     },
     "scope": null,
-    "locales": "es_MX"
+    "locales": "es_MX,en_US"
 }
