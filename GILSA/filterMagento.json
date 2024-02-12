@@ -11,7 +11,13 @@
         "completeness": [{
             "operator":"<=",
             "value":85,
-            "scope": "ch_gilsa"
+            "scope": "ch_gilsa",
+            "locales":"es_MX"
+        },{
+            "operator":"<=",
+            "value":40,
+            "scope": "ch_gilsa",
+            "locales":"en_US"
         }]
     },
     "scope": null,
